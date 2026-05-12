@@ -10,10 +10,15 @@ function Box({ position }) {
   useFrame(({ clock }) => {
     if (!ref.current) return
 
-    ref.current.position.y =
-      position[1] + Math.sin(clock.elapsedTime) * (hovered ? 0.3 : 0.1)
+    const t = clock.elapsedTime * 0.3
 
-    ref.current.rotation.y += hovered ? 0.03 : 0.01
+    ref.current.position.y =
+      position[1] + Math.sin(t) * (hovered ? 0.3 : 0.15)
+
+    ref.current.position.x = 
+      position[0] + Math.cos(t) * 0.1
+
+    ref.current.rotation.y += hovered ? 0.02 : 0.005
   })
 
   return (
@@ -31,9 +36,12 @@ function Box({ position }) {
 
 function App() {
   return (
-    <Canvas style={{ width: '100vw', height: '100vh' }}>
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[5, 5, 5]} intensity={1.5} />
+    <Canvas 
+    style={{ width: '100vw', height: '100vh' }}
+    camera={{position: [0,0,5]}}
+    fog={{near:1, far: 8, color:'#000000'}}>
+      <ambientLight intensity={0.15} />
+      <directionalLight position={[5, 5, 5]} intensity={.8} />
       <pointLight position={[-5, -5, -5]} intensity={0.5} />
 
       <Box position={[-2, 0, 0]} />

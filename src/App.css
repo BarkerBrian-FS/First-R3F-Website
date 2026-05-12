@@ -7,4 +7,6 @@ html, body, #root {
   margin: 0;
   overflow: hidden;
 }
-
+body {
+  background: black;
+}
