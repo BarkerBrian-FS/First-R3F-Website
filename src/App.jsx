@@ -11,12 +11,14 @@ function Box({ position }) {
     if (!ref.current) return
 
     const t = clock.elapsedTime * 0.3
+    const baseX = position[0]
+    const baseY = position[1]
 
     ref.current.position.y =
-      position[1] + Math.sin(t) * (hovered ? 0.3 : 0.15)
+      baseY + Math.sin(t) * 0.15
 
     ref.current.position.x = 
-      position[0] + Math.cos(t) * 0.1
+      baseX + Math.cos(t) * 0.1
 
     ref.current.rotation.y += hovered ? 0.02 : 0.005
   })
