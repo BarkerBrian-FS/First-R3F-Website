@@ -38,8 +38,8 @@ function App() {
   return (
     <Canvas 
     style={{ width: '100vw', height: '100vh' }}
-    camera={{position: [0,0,5]}}
-    fog={{near:1, far: 8, color:'#000000'}}>
+    camera={{position: [0,0,5]}}>
+    <fog attach="fog" args={['#000000', 1, 8]} />
       <ambientLight intensity={0.15} />
       <directionalLight position={[5, 5, 5]} intensity={.8} />
       <pointLight position={[-5, -5, -5]} intensity={0.5} />
