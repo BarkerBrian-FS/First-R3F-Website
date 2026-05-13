@@ -33,7 +33,10 @@ function Box({ position }) {
       onPointerLeave={() => setHovered(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'orange' : 'hotpink'} />
+      <meshStandardMaterial 
+      color={hovered ? '#ffb347' : 'ff4fd8'}
+      emissive={hovered ? '#ff8800':'ff00ff'}
+      emissiveIntensity={1.5} />
     </mesh>
   )
 }
@@ -55,13 +58,13 @@ function App() {
   speed={0.3}
 />
     <fog attach="fog" args={['#070b1a', 12, 30]} />
-      <ambientLight intensity={0.15} />
-      <directionalLight position={[5, 5, 5]} intensity={.8} />
-      <pointLight position={[-5, -5, -5]} intensity={0.5} />
+      <ambientLight intensity={0.25} color={'#6a7cff'} />
+      <directionalLight position={[5, 5, 5]} intensity={1} color={'#ffffff'} />
+      <pointLight position={[-5, -5, -5]} intensity={1.5} color={'#ff4fd8'}/>
       <ambientLight intensity={0.25} color='#6a7cff' />
-      <Box position={[-2, 0, 0]} />
-      <Box position={[0, 0.2, -0.5]} />
-      <Box position={[2, -0.2, 0.5]} />
+      <Box position={[-2.3, 0.4, -1.2]} />
+      <Box position={[0.7, -0.3, 0]} />
+      <Box position={[2.1, 0.6, 1.3]} />
     </Canvas>
   )
 }
