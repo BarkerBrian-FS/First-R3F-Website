@@ -1,7 +1,7 @@
 import './App.css'
 import { useRef, useState } from 'react'
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Stars } from '@react-three/drei'
+import { Stars, ScrollControls } from '@react-three/drei'
 import  CameraRig  from './Components/CameraRig'
 import FocalObject from './Components/FocalObject';
 
@@ -44,30 +44,31 @@ function Box({ position }) {
 
 function App() {
   return (
-    <Canvas 
-    style={{ width: '100vw', height: '100vh' }}
-    camera={{position: [0,0,5]}}>
-    <CameraRig/>
-    <FocalObject/>
-     <color attach="background" args={['#050816']} />
-     <Stars
-  radius={300}
-  depth={80}
-  count={8000}
-  factor={6}
-  saturation={0}
-  fade={false}
-  speed={0.3}
-/>
-    <fog attach="fog" args={['#070b1a', 12, 30]} />
-      <ambientLight intensity={0.25} color={'#6a7cff'} />
-      <directionalLight position={[5, 5, 5]} intensity={1} color={'#ffffff'} />
-      <pointLight position={[-5, -5, -5]} intensity={1.5} color={'#ff4fd8'}/>
-      <ambientLight intensity={0.25} color='#6a7cff' />
-      <Box position={[-3, 1, -1]} />
-      <Box position={[3, -1, 1]} />
-      <Box position={[0, 2, -2]} />
-    </Canvas>
+    <ScrollControls pages={3} damping={0.2}>
+      <Canvas
+      style={{ width: '100vw', height: '100vh' }}
+      camera={{position: [0,0,6], fov: 60}}>
+      <CameraRig/>
+       <color attach="background" args={['#050816']} />
+       <Stars
+        radius={300}
+        depth={80}
+        count={8000}
+        factor={6}
+        saturation={0}
+        fade
+        speed={0.3}
+      />
+      <fog attach="fog" args={['#070b1a', 10, 30]} />
+        <ambientLight intensity={0.25} color={'#6a7cff'} />
+        <directionalLight position={[5, 5, 5]} intensity={1} />
+        <pointLight position={[-5, -5, -5]} intensity={1.5} color={'#ff4fd8'}/>
+        <FocalObject/>
+        <Box position={[-3, 1, -1]} />
+        <Box position={[3, -1, 1]} />
+        <Box position={[0, 2, -2]} />
+      </Canvas>
+    </ScrollControls>
   )
 }
 
