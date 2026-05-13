@@ -12,9 +12,9 @@ function CameraRig() {
     const offset = scroll.offset
 
     target.current.set(
-      Math.sin(offset * Math.PI * 2) * 2,
+      Math.sin(offset * Math.PI * 2) * 3,
       offset * 2,
-      6 - offset * 3
+      6 - offset * 4
     )
 
     camera.position.lerp(target.current, 0.05)

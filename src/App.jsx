@@ -1,7 +1,7 @@
 import './App.css'
 import { useRef, useState } from 'react'
 import { Canvas, useFrame } from "@react-three/fiber"
-import { Stars, ScrollControls } from '@react-three/drei'
+import { Stars, ScrollControls, Html } from '@react-three/drei'
 import CameraRig from './Components/CameraRig'
 import FocalObject from './Components/FocalObject'
 
@@ -58,14 +58,13 @@ function App() {
           factor={6}
           saturation={0}
           fade
-          speed={0.3}
         />
 
         <fog attach="fog" args={['#070b1a', 10, 30]} />
 
-        <ambientLight intensity={0.25} color={'#6a7cff'} />
+        <ambientLight intensity={0.25} color='#6a7cff' />
         <directionalLight position={[5, 5, 5]} intensity={1} />
-        <pointLight position={[-5, -5, -5]} intensity={1.5} color={'#ff4fd8'} />
+        <pointLight position={[-5, -5, -5]} intensity={1.5} color='#ff4fd8' />
 
         <FocalObject />
 
@@ -73,6 +72,13 @@ function App() {
         <Box position={[3, -1, 1]} />
         <Box position={[0, 2, -2]} />
 
+        <Html fullscreen>
+          <div className='hero'>
+            <h1>Welcome to Space</h1>
+            <p>Scroll to explore the universe</p>
+          </div>
+        </Html>
+        
       </ScrollControls>
     </Canvas>
   )
