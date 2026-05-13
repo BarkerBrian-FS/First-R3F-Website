@@ -56,7 +56,7 @@ function App() {
       <ambientLight intensity={0.15} />
       <directionalLight position={[5, 5, 5]} intensity={.8} />
       <pointLight position={[-5, -5, -5]} intensity={0.5} />
-
+      <ambientLight intensity={0.25} color='#6a7cff' />
       <Box position={[-2, 0, 0]} />
       <Box position={[0, 0.2, -0.5]} />
       <Box position={[2, -0.2, 0.5]} />
