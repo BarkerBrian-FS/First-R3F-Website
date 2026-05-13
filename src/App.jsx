@@ -64,6 +64,9 @@ function App() {
       <directionalLight position={[5, 5, 5]} intensity={1} color={'#ffffff'} />
       <pointLight position={[-5, -5, -5]} intensity={1.5} color={'#ff4fd8'}/>
       <ambientLight intensity={0.25} color='#6a7cff' />
+      <Box position={[-3, 1, -1]} />
+      <Box position={[3, -1, 1]} />
+      <Box position={[0, 2, -2]} />
     </Canvas>
   )
 }
