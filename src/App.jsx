@@ -2,6 +2,7 @@ import './App.css'
 import { useRef, useState } from 'react'
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Stars } from '@react-three/drei'
+import  CameraRig  from './Components/CameraRig'
 
 function Box({ position }) {
   const ref = useRef()
@@ -42,6 +43,7 @@ function App() {
     <Canvas 
     style={{ width: '100vw', height: '100vh' }}
     camera={{position: [0,0,5]}}>
+    <CameraRig/>
      <color attach="background" args={['#050816']} />
      <Stars
   radius={300}
@@ -49,7 +51,7 @@ function App() {
   count={8000}
   factor={6}
   saturation={0}
-  fade={true}
+  fade={false}
   speed={0.3}
 />
     <fog attach="fog" args={['#070b1a', 12, 30]} />
