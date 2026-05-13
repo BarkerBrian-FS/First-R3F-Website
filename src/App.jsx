@@ -1,7 +1,7 @@
 import './App.css'
 import { useRef, useState } from 'react'
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Stars } from '@react-three/drei'
+import { Stars } from '@react-three/drei'
 import  CameraRig  from './Components/CameraRig'
 
 function Box({ position }) {
@@ -14,7 +14,7 @@ function Box({ position }) {
     const t = clock.elapsedTime * 0.3
     const baseX = position[0]
     const baseY = position[1]
-    const rotationSpeed = hovered ? 0.02 : 0.05
+    const rotationSpeed = hovered ? 0.015 : 0.002
 
     ref.current.position.y =
       baseY + Math.sin(t) * 0.15
@@ -62,8 +62,6 @@ function App() {
       <Box position={[-2, 0, 0]} />
       <Box position={[0, 0.2, -0.5]} />
       <Box position={[2, -0.2, 0.5]} />
-
-      <OrbitControls enableDamping />
     </Canvas>
   )
 }
