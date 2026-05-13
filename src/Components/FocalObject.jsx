@@ -11,6 +11,9 @@ export const FocalObject = () => {
 
         ref.current.rotation.y = t*0.2
         ref.current.rotation.x = Math.sin(t*0.03)*0.2
+        ref.current.scale.setScalar(
+            1.2 + Math.sin(t) * 0.05
+        )
     })
   return (
     <mesh ref={ref} position={[0,0,0]}>
