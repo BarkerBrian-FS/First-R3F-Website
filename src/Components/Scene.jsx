@@ -1,9 +1,9 @@
 import { Stars } from '@react-three/drei'
 import Box from './Box'
-import FocalObject from './FocalObject'
+import Astronaut from './AstronautModel'
 
 
-const Scene = () => {
+const Scene = ({scene}) => {
 
   return (
     <>
@@ -25,7 +25,7 @@ const Scene = () => {
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <pointLight position={[-5, -5, -5]} intensity={1.5} color='#ff4fd8' />
         
-      <FocalObject />
+      <Astronaut scene={scene} />
         
       <Box position={[-3, 1, -1]} />
       <Box position={[3, -1, 1]} />

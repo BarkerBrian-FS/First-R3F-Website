@@ -16,7 +16,7 @@ function App() {
 
       <CameraRig />
 
-      <Scene />
+      <Scene  />
 
       <HtmlSection />
         
