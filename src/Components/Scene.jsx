@@ -25,7 +25,7 @@ const Scene = ({scene}) => {
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <pointLight position={[-5, -5, -5]} intensity={1.5} color='#ff4fd8' />
         
-      <Astronaut scene={scene} />
+      <Astronaut  />
         
       <Box position={[-3, 1, -1]} />
       <Box position={[3, -1, 1]} />

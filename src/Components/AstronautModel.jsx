@@ -2,10 +2,10 @@ import { useGLTF } from '@react-three/drei'
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 
-export default function Astronaut({ scene }) {
+export default function Astronaut() {
   const ref = useRef()
 
-  const { scene: model } = useGLTF('/models/astronaut.glb')
+  const  scene  = useGLTF('/models/astronaut.glb')
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime
@@ -23,7 +23,7 @@ export default function Astronaut({ scene }) {
   return (
     <primitive
       ref={ref}
-      object={model}
+      object={scene}
       scale={scale}
       position={[0, -0.5, 0]}
     />
