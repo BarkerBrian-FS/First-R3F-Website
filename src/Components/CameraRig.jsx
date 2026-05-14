@@ -9,13 +9,21 @@ function CameraRig() {
   const target = useRef(new Vector3())
 
   useFrame(() => {
-    const offset = scroll.offset
+    const t = scroll.offset
 
-    target.current.set(
-      Math.sin(offset * Math.PI * 2) * 3,
-      offset * 2,
-      6 - offset * 4
-    )
+    if(t <0.33){
+      target.current.set(0,0,6)
+    }
+    else if(t < 0.66){
+      target.current.set(
+        Math.sin(t * 10)*2,
+        (t - 0.33) * 4,
+        5
+      )
+    } else {
+      target.current.set(0,0,3)
+    }
+    
 
     camera.position.lerp(target.current, 0.05)
     camera.lookAt(0, 0, 0)
