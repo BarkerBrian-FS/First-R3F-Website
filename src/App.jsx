@@ -12,7 +12,7 @@ function App() {
       style={{ width: '100vw', height: '100vh' }}
       camera={{ position: [0, 0, 6], fov: 60 }}
     >
-      <ScrollControls pages={3} damping={0.2}>
+      <ScrollControls pages={3} damping={0.2} >
 
       <CameraRig />
 
