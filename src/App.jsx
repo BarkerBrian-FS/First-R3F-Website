@@ -1,6 +1,9 @@
 import './App.css'
 import { Canvas  } from "@react-three/fiber"
-import { ScrollControls, Html } from '@react-three/drei'
+import { ScrollControls } from '@react-three/drei'
+import CameraRig from './Components/CameraRig'
+import Scene from './Components/Scene'
+import HtmlSection from './Components/HtmlSection'
 
 function App() {
   
@@ -11,14 +14,12 @@ function App() {
     >
       <ScrollControls pages={3} damping={0.2}>
 
-        
-        <Html fullscreen>
-          <div className='hero'>
-            <h1>Welcome to Space</h1>
-            <p>Scroll to explore the universe</p>
-          </div>
-        </Html>
+      <CameraRig />
 
+      <Scene />
+
+      <HtmlSection />
+        
       </ScrollControls>
     </Canvas>
   )
