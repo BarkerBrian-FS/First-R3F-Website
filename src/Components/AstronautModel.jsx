@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber'
 export default function Astronaut() {
   const ref = useRef()
 
-  const  {scene}  = useGLTF('/Models/astronaut.glb')
+  const { scene }  = useGLTF('/Models/astronaut.glb')
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime
@@ -17,14 +17,11 @@ export default function Astronaut() {
     ref.current.rotation.y += 0.002
   })
 
-  // only scene-based scaling (safe)
-  const scale = scene === 1 ? 1.2 : 0.8
-
   return (
     <primitive
       ref={ref}
       object={scene}
-      scale={scale}
+      scale={1.2}
       position={[0, -0.5, 0]}
     />
   )
