@@ -3,7 +3,7 @@ import Box from './Box'
 import Astronaut from './AstronautModel'
 
 
-const Scene = ({scene}) => {
+const Scene = () => {
 
   return (
     <>

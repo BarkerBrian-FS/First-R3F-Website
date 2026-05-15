@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber'
 export default function Astronaut() {
   const ref = useRef()
 
-  const  scene  = useGLTF('/models/astronaut.glb')
+  const  {scene}  = useGLTF('/Models/astronaut.glb')
 
   useFrame(({ clock }) => {
     const t = clock.elapsedTime
