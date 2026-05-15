@@ -18,12 +18,11 @@ const Scene = () => {
         saturation={0}
       />
         
-      <fog attach="fog" args={['#070b1a', 10, 30]} />
+      <fog attach="fog" args={['#070b1a', 25, 80]} />
         
-      <ambientLight intensity={0.25} color='#6a7cff' />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
-      <pointLight position={[-5, -5, -5]} intensity={1.5} color='#ff4fd8' />
-        
+      <directionalLight position={[8, 10, 5]} intensity={2} castShadow />
+      <directionalLight position={[-8, 2, -6]} intensity={1.5} color="#ff4fd8" />
+      <pointLight position={[0, -5, 5]} intensity={0.8} color="#ffffff" />
       <Astronaut  />
         
       <Box position={[-3, 1, -1]} />
