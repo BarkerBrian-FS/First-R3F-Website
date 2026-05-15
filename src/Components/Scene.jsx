@@ -11,12 +11,11 @@ const Scene = () => {
       <color attach="background" args={['#050816']} />
         
       <Stars
-        radius={300}
+        radius={400}
         depth={80}
         count={8000}
         factor={6}
         saturation={0}
-        fade
       />
         
       <fog attach="fog" args={['#070b1a', 10, 30]} />
