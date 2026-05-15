@@ -1,6 +1,7 @@
 import { Stars } from '@react-three/drei'
 import Box from './Box'
 import Astronaut from './AstronautModel'
+import { EffectComposer, Bloom} from '@react-three/postprocessing'
 
 
 const Scene = () => {
@@ -17,6 +18,9 @@ const Scene = () => {
         factor={6}
         saturation={0}
       />
+      <EffectComposer>
+        <Bloom intensity={ 0.6 } luminanceThreshold={ 0.2 }/>
+      </EffectComposer>
         
       <fog attach="fog" args={['#070b1a', 25, 80]} />
         
