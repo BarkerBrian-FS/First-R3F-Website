@@ -13,8 +13,9 @@ export default function Astronaut() {
     if (!ref.current) return
 
     // always visible (NO hiding logic)
-    ref.current.position.y = Math.sin(t) * 0.2
-    ref.current.rotation.y += 0.002
+    ref.current.position.y = Math.sin(t * 0.8) * 0.15
+    ref.current.rotation.y += 0.003
+    ref.current.rotation.z = Math.sin(t * 0.5) * 0.05
   })
 
   return (

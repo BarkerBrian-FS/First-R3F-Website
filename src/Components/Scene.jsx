@@ -1,4 +1,4 @@
-import { Stars } from '@react-three/drei'
+import { Stars, Environment } from '@react-three/drei'
 import Box from './Box'
 import Astronaut from './AstronautModel'
 import { EffectComposer, Bloom} from '@react-three/postprocessing'
@@ -9,24 +9,25 @@ const Scene = () => {
   return (
     <>
         
-      <color attach="background" args={['#050816']} />
+      <color attach="background" args={['#0b1020']} />
         
+      <Environment preset="night" /> 
       <Stars
-        radius={400}
-        depth={80}
-        count={8000}
-        factor={6}
+        radius={200}
+        depth={40}
+        count={4000}
+        factor={3}
         saturation={0}
       />
+      
       <EffectComposer>
-        <Bloom intensity={ 0.6 } luminanceThreshold={ 0.2 }/>
+        <Bloom intensity={ 0.5 } luminanceThreshold={ 0.4 }/>
       </EffectComposer>
         
-      <fog attach="fog" args={['#070b1a', 25, 80]} />
-        
-      <directionalLight position={[8, 10, 5]} intensity={2} castShadow />
-      <directionalLight position={[-8, 2, -6]} intensity={1.5} color="#ff4fd8" />
-      <pointLight position={[0, -5, 5]} intensity={0.8} color="#ffffff" />
+      <fog attach="fog" args={['#0b1020', 20, 60]} />
+      <ambientLight intensity={.6} color={'#ffffff'} />
+      <directionalLight position={[5, 5, 5]} intensity={1.5} color='#ffffff' />
+      <directionalLight position={[-5, 2, -5]} intensity={0.5} color="#c7d2ff" />
       <Astronaut  />
         
       <Box position={[-3, 1, -1]} />
